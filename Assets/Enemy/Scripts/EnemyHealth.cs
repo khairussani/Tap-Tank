@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class EnemyHealth : MonoBehaviour {
 
@@ -16,6 +17,8 @@ public class EnemyHealth : MonoBehaviour {
         {
             health = 0;
             Destroy(gameObject);
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.buildIndex + 1);
         }
     }
 
